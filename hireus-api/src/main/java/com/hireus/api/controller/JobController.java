@@ -15,6 +15,11 @@ public class JobController {
         return service.getAllJobs();
     }
     
+    @GetMapping("/recruiter/{recruiterId}")
+    public List<Job> getJobsByRecruiter(@PathVariable Long recruiterId) {
+        return service.getJobsByRecruiter(recruiterId);
+    }
+
     @PostMapping
     public Job createJob(@RequestBody Job job) { return service.createJob(job); }
     

@@ -14,6 +14,8 @@ public class JobService {
         return repository.findByTitleContainingIgnoreCaseOrLocationContainingIgnoreCase(search, search);
     }
     
+    public List<Job> getJobsByRecruiter(Long recruiterId) { return repository.findByRecruiterId(recruiterId); }
+
     public Job createJob(Job job) { return repository.save(job); }
     
     public void deleteJob(Long id) { repository.deleteById(id); }

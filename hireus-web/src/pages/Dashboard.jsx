@@ -48,7 +48,7 @@ const Dashboard = () => {
 
   const loadMyJobs = async () => {
     try {
-      const res = await api.get('/jobs');
+      const res = await api.get(`/jobs/recruiter/${user.userId}`);
       setMyJobs(res.data);
     } catch (err) {
       console.error('Failed to load jobs', err);
